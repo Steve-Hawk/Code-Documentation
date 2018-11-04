@@ -2,5 +2,6 @@
 ---
 ## 可用于改进数值计算精度工具库 GNU Multiple Precision Arithmetic Library,GNU MPFR Library:
 
-> [GMP](https://gm plib.org/)
-> [MPFR](http://www.mpfr.org/)
+[GMP](https://www.gmplib.org/)
+
+[MPFR](http://www.mpfr.org/)
