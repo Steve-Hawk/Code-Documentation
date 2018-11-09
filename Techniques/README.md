@@ -16,3 +16,7 @@
   - 而且Homebrew下软件的管理更加方便，一方面通过Homebrew安装的软件在一个文件里面，系统识别的终端启动软件的alias名字在另一个文件夹里面，更加方便管理；
   - brew/science -> brewsci/science
 ---
+
+## Mac开启Proxies时的问题：
+  - Network选项下会自动配置Proxy代理设置，如果遇到cannot connet to the server的问题，取消勾选所有的建立的Proxies选项，包括Http & Https；
+---
