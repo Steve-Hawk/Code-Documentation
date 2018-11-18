@@ -20,3 +20,6 @@
 ## Mac开启Proxies时的问题：
   - Network选项下会自动配置Proxy代理设置，如果遇到cannot connet to the server的问题，取消勾选所有的建立的Proxies选项，包括Http & Https；
 ---
+
+## C++ Style
+- 在类或者模版类的定义时，如果成员函数的语法块比较小，就直接在声明的地方完整写出来，使用内联函数的形式
