@@ -83,7 +83,7 @@ $ cpio -id < x.cpio
   $ sudo vim /etc/sysconfig/network-scripts/ifcfg-ens33
   # 修改其中的 ```ONBOOT```键值为 ```yes```
   ```
-  2. 其他一些网络参数的配置命令：ifconfig ifup ifdown
+  2. 其他一些网络参数的配置命令：```ifconfig ifup ifdown```
   
 ---
 ## Common Building System
