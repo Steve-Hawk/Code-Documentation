@@ -75,6 +75,17 @@ $ cpio -id < x.cpio
 
 - 建议在```.bash_profile```文件下面用注释的方式设置多组用户层级下的环境变量名称，便于随时切换与修改；
 ---
+
+## CentOS网络配置
+- 初始安装CentOS系统后，可能存在网络无法连接的情况(具体体现在```yum search ```的命令无法使用)
+  1. 可能是由于网卡没有配置好，机器的IP地址分配有问题
+  ```(shell)
+  $ sudo vim /etc/sysconfig/network-scripts/ifcfg-ens33
+  # 修改其中的 ```ONBOOT```键值为 ```yes```
+  ```
+  2. 其他一些网络参数的配置命令：ifconfig ifup ifdown
+  
+---
 ## Common Building System
 - 用CMake结合写Makefile的编译文档比较适合科学计算领域
 - 当科学计算的规模比较大的时候（上百个库文件以及编译调度管理时），可以尝试一下Google的开源Bazel的编译系统
