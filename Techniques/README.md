@@ -7,9 +7,9 @@
 
 ---
 ## WinEdt 10破解
-> Name:Cracker TeCHiScy
+> Name: Cracker TeCHiScy
 >
-> Code:1130140925535334280
+> Code: 1130140925535334280
 
 ## Macports VS Homebrew
 ### 共同点：
