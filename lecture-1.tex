@@ -1,0 +1,208 @@
+\documentclass{article}
+%\usepackage{ctex}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{tocloft}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[inner=0.5in,outer=0.6in,vmargin=1in,marginparwidth=1in]{geometry}
+\usepackage{mdframed}
+%------------------------------%
+\usepackage{tikz-feynman}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{amsmath}
+%\usepackage{hyperref}
+\usepackage{microtype}   % Fine small typographical details
+
+%% Make table of content heading smaller
+\tikzfeynmanset{compat=1.0.0}
+\newcommand{\institution}{ShanDong University}
+\newcommand{\textline}{\noindent\makebox[\linewidth]{\rule{.8\paperwidth}{0.8pt}}}
+\title{Lecture-1}
+
+
+\definecolor{iceberg}{rgb}{0.44, 0.65, 0.82}
+\definecolor{skyblue}{rgb}{0.53, 0.81, 0.92}
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+\newmdenv[linecolor=iceberg,innertopmargin=0.2cm,innerleftmargin=2pt,innerrightmargin=2pt,skipbelow=1cm,linewidth=2pt]{notes}
+
+\begin{document}
+\input{titlepage.tex}
+\section{Introduction}
+\subsection{Purpose of Discussion}
+\large{We will show how photons arise from the
+quantization of the electromagnetic field and how massive, charged particles such as
+electrons arise from the quantization of matter fields.There are electron fields,
+but also quark fields, neutrino fields, gluon fields, W and Z-boson fields, Higgs fields
+and a whole slew of others}
+\subsection{Why We Need QFT}
+\large{There is an unavoidable contraction between classical physics and modern physics(Local Interaction \& Action at a distance).To be more specific, 
+the locality give us motivation to investigate two problems:}
+
+\paragraph{Answer 1}
+\large{The combination of quantum mechanics and special relativity
+implies that particle number is not conserved}
+\subsubsection{A simple \& interesting physical problem}
+According to uncertainty principle, particles restricted inside a box satisfy:
+\begin{align}\label{uncertainty}
+    \Delta p \geq \hbar / L \\
+    \Delta E \geq \hbar c / L
+\end{align}
+Following above equation, when the variation of energy reaches $\Delta E=2 m c^{2}$, there will be unavoidable new particles appear.
+If we still obey the non-relativistic QM, the only explanation is the particle number is not conserved!
+
+\paragraph{Answer 2}
+\large{All particles of the same type are the same}
+Is is unbelievable that the proton from the beginning of the universe and that detected on the 
+earth are exactly the same.One explanation that might be offered is that there’s a sea
+of proton "stuff" filling the universe and when we make a proton we somehow dip our
+hand into this stuff and from it mould a proton
+\subsection{What is QFT}
+The rules for quantizing a field are no different from that transforming CM into QM,thus the basic degrees of freedom in
+quantum field theory are operator valued functions of space and time. This means that
+we are dealing with an infinite number of degrees of freedom
+
+\section{Units}
+What we are familiar is SI units, however natural units are generally applied in cosmology 
+and high-energy physics.
+\begin{equation}
+    c=\hbar=\epsilon_{\circ}=k_{B}=1
+\end{equation}
+\begin{itemize}
+    \item $c = 2.9979 \times 10^{8} \mathrm{m} / \mathrm{s}$ 
+    \item $\hbar = 1.0546 \times 10^{-34} \mathrm{J} \mathrm{s}$
+    \item $\epsilon_{\mathrm{o}} = 8.8542 \times 10^{-12} \mathrm{A}^{2} \mathrm{s}^{4} \mathrm{kg}^{-1} \mathrm{m}^{-3}$
+    \item $k_{B}=\text { Boltzmann constant }=1.3806 \times 10^{-23} \mathrm{J} \mathrm{K}^{-1}$
+\end{itemize}
+A simple formula to convert numerical value between different units:
+\begin{equation}\footnote{E can arbitrarily chosen energy unit, popular as GeV}
+    \left(\mathrm{kg}^{\alpha} \mathrm{m}^{\beta} \mathrm{s}^{\gamma}\right) \rightarrow (E)^{\alpha-\beta-\gamma} \hbar^{\beta+\gamma} c^{\beta-2 \alpha}
+\end{equation}
+\subsubsection{Plank Mass}
+Let us examine the Einstein Equations with cosmological constant
+\begin{equation*}
+    R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}+\Lambda g_{\mu \nu}=\frac{8 \pi G}{c^4}T_{\mu \nu}
+\end{equation*}
+In natural units, the above equation becomes:
+\begin{equation}
+    R_{\mu \nu}-\frac{1}{2} R g_{\mu \nu}+\Lambda g_{\mu \nu}={8 \pi G}T_{\mu \nu}
+\end{equation}
+If we define the planck mass as $m_p = \sqrt{\frac{\hbar\times c}{G}}=2.7164\times 10^{-8}kg$,
+then we can calculate $m_{p}=1.2209 \times 10^{19} \mathrm{GeV}$ \textbf{Calculate It!}
+
+\section{Classical Field Review}
+\paragraph{Concepts}
+\large{When constructing the Lagrangian for a field distribution(discussing only scalar \& non-interacting field),
+the spacetime coordinates are just index, comparing to the individual particles.}
+The dynamical variable can be treated as $\varphi ( \mathbf { r } , t )$, given a matter distribution:
+$\rho = \rho ( \mathbf { r } , t )$, 
+or we can also treat the field variables as a map:$\varphi : \mathbf { R } ^ { 4 } \rightarrow \mathbf { R }$, in a typical spacetime domain:
+% insert a manifold diagram 
+% todo recommend using Tikz
+\begin{equation}\label{domain}
+    \mathcal { R } = \{ ( t , x , y , z ) | t _ { 1 } \leq t \leq t _ { 2 } , - \infty < x , y , z < \infty \}
+\end{equation}
+Thus we are dealing with a system with an infinite number of 
+degrees of freedom, compared to CM. For convenience, we can treat the field quantity
+defined on spacetime as a function on $4-D$ manifold.
+
+\subsection{Electromagnetic Field Description}
+From what we are really used to write "Maxwell Equations":
+\begin{align}
+    \vec{\nabla} \cdot \vec{E} &=4 \pi \rho \\
+    \vec{\nabla}\times\vec{B}-\frac{1}{c} \frac{\partial\vec{E}}{\partial t} &=\frac{4\pi}{c}\vec{J}\\
+    \vec{\nabla}\cdot \vec{B} &=0\\
+    \vec{\nabla}\times\vec{E}+\frac{1}{c}\frac{\partial\vec{B}}{\partial t} &=0
+\end{align}
+The above equation based on the Gaussian Units:
+\begin{center}
+\begin{itemize}
+    \item $\vec{E}\longrightarrow\frac{1}{\sqrt{4\pi\epsilon_{0}}}\vec{E}$, $\vec{B}\longrightarrow\sqrt{\frac{\mu_{0}}{4 \pi}}\vec{B}$ $\rho\longrightarrow\sqrt{4\pi\epsilon_{0}}\rho$ , $\vec{J}\longrightarrow\sqrt{4\pi\epsilon_{0}}\vec{J}$
+\end{itemize}
+\end{center}
+As a result, we can write the Maxwell Equations as:
+\begin{equation}\footnote{$A^{\mu}(\vec{x}, t)=(\phi, \vec{A})$}
+    \vec{E}=-\vec{\nabla} \phi-\frac{\partial\vec{A}}{\partial t}, \quad\vec{B}=\vec{\nabla}\times\vec{A}
+\end{equation}
+\subsection{Lagrangian}
+Similar in the CM, the Lagrangian \& Hamiltonian are important to catch the system
+dynamics. In Field theory, the Lagrangian can more or less treated as the hypersurface
+integral:
+\begin{equation}
+    L(t)=\int d^{3} x \mathcal{L}\left(\phi_{a},\partial_{\mu}\phi_{a}\right)
+\end{equation}
+The action is just:
+\begin{equation}
+    S=\int_{t_{1}}^{t_{2}} d t \int d^{3} x \mathcal{L}=\int d^{4} x \mathcal{L}
+\end{equation}
+We notice that the constructed Lagrangian is only related to first derivative with
+respect to spacetime coordinates. But in practice, it is more common to find relationship
+between higher derivatives
+\subsection{Variational Principle}
+In physics, fundamental theories always arise from a variational principle.Ultimately this stems from their roots as quantum mechanical systems, 
+as can be seen from Feynman’s path integral formalism.\\
+In a typical spacetime domain, via the Lagrangian we construct the action:$S = S [ \varphi ]$ which is a functional of field $\varphi$.
+Like the procedure in particle circumstances,the variational principle goes as follows:\\
+Consider any family of functions, labeled by a parameter $\lambda$, which includes some given function $\lambda_0$ at
+$\lambda = 0$,we can think of $\varphi_\lambda$ as defining a curve in the manifold which
+passes through the point $\varphi_0$,getting the action:
+\begin{equation}
+    S ( \lambda ) : = S \left[ \varphi _ { \lambda } \right]
+\end{equation}
+the critical point $\lambda = 0$ is just the same as in real number space, (just manifold space),
+and the turning points of the functional $S [ \varphi ]$ correspond
+to functions on spacetime which solve the Euler-Lagrangian equations.\\
+Let us consider a curve that passes through a putative critical point $\varphi$ (say $\lambda = 0$) then:
+\begin{equation}
+    \varphi _ { \lambda } :  \lambda = 0,\varphi_0=\varphi.
+\end{equation}
+If $\varphi _ { \lambda = 0 } \equiv \varphi$ is a critical point in the "field manifold",then:
+\begin{equation}
+    \delta S : = \left( \frac { d S ( \lambda ) } { d \lambda } \right) _ { \lambda = 0 } = 0
+\end{equation}
+\begin{equation}
+    \delta \varphi : = \left( \frac { d \varphi ( \lambda ) } { d \lambda } \right) _ { \lambda = 0 }
+\end{equation}
+\begin{itemize}
+    \item $\delta S$ the first variation of the action.
+    \item $\delta \varphi$ the variation of $\varphi$.
+\end{itemize}
+In the general case, we can reduce the variation of the action based on the Lagrangian density:
+\begin{equation}
+    \delta S [ \varphi ] = \int _ { \mathcal { R } } d ^ { 4 } x F ( x ) \delta \varphi ( x ), F ( x ) \equiv \frac { \delta S } { \delta \varphi ( x ) }
+\end{equation}
+The general variational principle tells us that $\frac { \delta S } { \delta \varphi } = 0$ can be obtained.
+\subsection{Euler-Lagrangian Equations}
+Generally, what we discuss is the local field theory(global theory is deep and different)
+\subsubsection{Example}
+Take the KG field as an example,the time-dependent total Lagrangian on a hypersurface and total Lagrangian for KG field is:
+\begin{align}
+    L &= \int _ { \mathbf { R } ^ { 3 } } d ^ { 3 } x \frac { 1 } { 2 } \left( \varphi _ { , t } ^ { 2 } - ( \nabla \varphi ) ^ { 2 } - m ^ { 2 } \varphi ^ { 2 } \right)\\
+    S [ \varphi ] &= \int _ { t _ { 1 } } ^ { t _ { 2 } } d t L
+\end{align}
+The variation of Lagrangian is:
+\begin{equation}\label{boundary}
+\begin{aligned} 
+\delta \mathcal { L } & = \varphi _ { , t } \delta \varphi _ { , t } - \nabla \varphi \cdot \nabla \delta \varphi - m ^ { 2 } \varphi \delta \varphi \\ 
+& = \left( - \varphi _ { , t t } + \nabla ^ { 2 } \varphi - m ^ { 2 } \varphi \right) \delta \varphi + \frac { \partial } { \partial x ^ { \alpha } } V ^ { \alpha }
+\end{aligned}
+\end{equation}
+where: $V ^ { 0 } = \varphi _ { , t } \delta \varphi , \quad V ^ { i } = - ( \nabla \varphi ) ^ { i } \delta \varphi$.When taking the boundary conditions into account, 
+the last term in (\ref{boundary}) usually vanish in the process of integral. 
+\subsubsection{General Case}
+For any formula like $F \left( x , \varphi , \varphi _ { \alpha } \right)$, we give the definition of total derivative with respect to some coordinates:
+\begin{equation}
+    D _ { \alpha } F \left( x , \varphi , \varphi _ { \alpha } \right) = \frac { \partial F } { \partial x ^ { \alpha } } + \frac { \partial F } { \partial \varphi } \varphi _ { \alpha } + \frac { \partial F } { \partial \varphi _ { \beta } } \varphi _ { \alpha \beta }
+\end{equation}
+Following the procedure, we define the variation of the Lagrangian density as:
+\begin{equation}
+    \delta \mathcal { L } : = \frac { \partial \mathcal { L } } { \partial \varphi } \delta \varphi + \frac { \partial \mathcal { L } } { \partial \varphi _ { \alpha } } \delta \varphi _ { \alpha }
+\end{equation}
+then, we can rewrite the expression as:
+\begin{equation}
+    \delta \mathcal { L } = \left( \frac { \partial \mathcal { L } } { \partial \varphi } - D _ { \alpha } \frac { \partial \mathcal { L } } { \partial \varphi _ { \alpha } } \right) \delta \varphi + D _ { \alpha } V ^ { \alpha }, V ^ { \alpha } = \frac { \partial \mathcal { L } } { \partial \varphi _ { \alpha } } \delta \varphi
+\end{equation}
+
+\end{document}
