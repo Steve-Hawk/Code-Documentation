@@ -1,1 +1,0 @@
-# Various Library Manuls & Documentations
